@@ -1,0 +1,6 @@
+.editorconfig
+.eslintrc.js
+.prettierrc.js
+.github/
+*.sublime-*
+test/

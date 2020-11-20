@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-
 const yaml = require('js-yaml');
+
+const diff = require('./formatters/diff');
+const gitlab = require('./formatters/gitlab');
 
 const {
   // Used as a fallback for local testing.
@@ -32,19 +33,6 @@ function getOutputPath() {
 }
 
 /**
- * Create a fingerprint for the given file and error message.
- * @param  {String} filePath
- * @param  {String} message
- * @return {String}
- */
-function createFingerprint(filePath, message) {
-  const md5 = crypto.createHash('md5');
-  md5.update(filePath);
-  md5.update(message);
-  return md5.digest('hex');
-}
-
-/**
  * Parse the `prettier --check` output to format a GitLab Code Quality report JSON.
  * @param  {String}        results The output of a `prettier --check` failing command.
  * @return {Array<Object>}
@@ -54,20 +42,15 @@ function parse(results) {
     .toString()
     .split('\n')
     .filter((line) => line.startsWith('[warn]') && !line.includes('Code style issues found'))
-    .map((line) => line.replace('[warn] ', ''))
-    .map((filePath) => ({
-      description: '[Prettier] Code style issues found',
-      fingerprint: createFingerprint(filePath, '[Prettier] Code style issues found'),
-      location: {
-        path: filePath,
-      },
-    }));
+    .map((line) => line.replace('[warn] ', ''));
 }
 
-module.exports = (results) => {
+module.exports = async (results) => {
   if (CI_JOB_NAME || PRETTIER_CODE_QUALITY_REPORT) {
-    const data = parse(results);
+    const files = parse(results);
 
+    await diff(files);
+    const data = await gitlab(files);
     const outputPath = PRETTIER_CODE_QUALITY_REPORT || getOutputPath();
     const dir = path.dirname(outputPath);
     fs.mkdirSync(dir, { recursive: true });

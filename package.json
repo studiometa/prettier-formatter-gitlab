@@ -1,6 +1,6 @@
 {
   "name": "@studiometa/prettier-formatter-gitlab",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Prettier formatter for the GitLab Code Quality report",
   "main": "src/index.js",
   "bin": {
@@ -41,7 +41,9 @@
     "chalk": "^4.1.0",
     "jest-diff": "^26.6.2",
     "js-yaml": "^3.14.0",
-    "prettier-linter-helpers": "^1.0.0",
-    "prettier": "^2.2.0"
+    "prettier-linter-helpers": "^1.0.0"
+  },
+  "peerDependencies": {
+    "prettier": ">=2"
   }
 }

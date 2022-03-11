@@ -6,6 +6,7 @@ const [, , cmd] = process.argv;
 
 exec(cmd, async (error) => {
   if (error) {
+    console.log(error.message);
     await prettierFormatterGitlab(error);
     process.exit(1);
   }

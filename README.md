@@ -19,7 +19,7 @@ npm install -D @studiometa/prettier-formatter-gitlab
 Prettier does not have an option for custom reporter, this package will run a prettier CLI command for you and parse its result to generate the Code Quality report.
 
 ```js
-prettier-formatter-gitlab 'prettier -c src/'
+prettier-formatter-gitlab 'prettier -l src/'
 ```
 
 The report file path will be read from the `PRETTIER_CODE_QUALITY_REPORT` environment variable or from the `.gitlab-ci.yml` configuration file when using the code quality report artifacts:
@@ -30,7 +30,7 @@ eslint:
   image: node:12
   script:
     - npm ci
-    - prettier-formatter-gitlab 'prettier -c src/'
+    - prettier-formatter-gitlab 'prettier -l src/'
   artifacts:
     reports:
       codequality: gl-codequality.json

@@ -33,16 +33,15 @@ function getOutputPath() {
 }
 
 /**
- * Parse the `prettier --check` output to format a GitLab Code Quality report JSON.
- * @param  {String}        results The output of a `prettier --check` failing command.
+ * Parse the `prettier --list-different` output to format a GitLab Code Quality report JSON.
+ * @param  {String}        results The output of a `prettier --list-different` failing command.
  * @return {Array<Object>}
  */
 function parse(results) {
   return results
     .toString()
     .split('\n')
-    .filter((line) => line.startsWith('[warn]') && !line.includes('Code style issues found'))
-    .map((line) => line.replace('[warn] ', ''));
+    .filter((line) => line);
 }
 
 module.exports = async (results) => {

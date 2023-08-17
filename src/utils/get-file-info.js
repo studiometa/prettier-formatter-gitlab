@@ -5,7 +5,7 @@ const prettier = require('prettier');
 /**
  * Get Prettier file informations.
  * @param {String} filePath The absolute path to the file.
- * @return {Objec} An object with Prettier informations.
+ * @return {Object} An object with Prettier informations.
  */
 module.exports = async (filePath) => {
   const input = fs.readFileSync(filePath, 'utf8').toString();
@@ -18,8 +18,8 @@ module.exports = async (filePath) => {
     options.parser = infos.inferredParser;
   }
 
-  const isFormatted = prettier.check(input, options);
-  const output = prettier.format(input, options);
+  const isFormatted = await prettier.check(input, options);
+  const output = await prettier.format(input, options);
 
   return {
     filename,

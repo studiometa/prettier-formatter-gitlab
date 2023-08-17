@@ -27,7 +27,7 @@ The report file path will be read from the `PRETTIER_CODE_QUALITY_REPORT` enviro
 ```yaml
 # .gitlab-ci.yml
 eslint:
-  image: node:12
+  image: node:14
   script:
     - npm ci
     - prettier-formatter-gitlab 'prettier -l src/'

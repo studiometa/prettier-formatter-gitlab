@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-### v1.1.3 - 2024.03.12
+## v1.1.4 - 2024.03.12
+
+### Fixed
+
+- Fix auto-publish on tag push ([42f3f95](https://github.com/studiometa/prettier-formatter-gitlab/commit/42f3f95))
+
+## v1.1.3 - 2024.03.12
 
 ### Fixed
 
@@ -18,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Simplify NPM pulbish action ([4ed273f](https://github.com/studiometa/prettier-formatter-gitlab/commit/4ed273f))
 - Update Node v12 → v20 ([f59fcb4](https://github.com/studiometa/prettier-formatter-gitlab/commit/f59fcb4))
 
-### v1.1.2 - 2022.03.11
+## v1.1.2 - 2022.03.11
 
 ### Fixed
 

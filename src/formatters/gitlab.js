@@ -5,14 +5,15 @@ const getFileInfo = require('../utils/get-file-info.js');
 
 /**
  * Create a fingerprint for the given file and error message.
- * @param  {String} filePath
- * @param  {String} message
- * @return {String}
+ *
+ * @param  {string[]} ...args
+ * @return {string}
  */
-function createFingerprint(filePath, message) {
+function createFingerprint(...args) {
   const md5 = crypto.createHash('md5');
-  md5.update(filePath);
-  md5.update(message);
+  args.forEach((arg) => {
+    md5.update(String(arg));
+  });
   return md5.digest('hex');
 }
 
@@ -44,8 +45,11 @@ function formatFile({ filename, input, output }) {
     }
 
     return {
+      type: 'issue',
+      check_name: 'prettier',
       description: message,
-      fingerprint: createFingerprint(filename, message),
+      severity: 'minor',
+      fingerprint: createFingerprint(filename, message, line),
       location: {
         path: filename,
         lines: {

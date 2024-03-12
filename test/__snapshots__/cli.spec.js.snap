@@ -1,56 +1,56 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`prettier-formatter-gitlab cli should create a code quality report file 1`] = `
 "[
   {
-    \\"type\\": \\"issue\\",
-    \\"check_name\\": \\"prettier\\",
-    \\"description\\": \\"Replace ·arg·· with arg\\",
-    \\"severity\\": \\"minor\\",
-    \\"fingerprint\\": \\"50ddf265a9c04daac13cec682b10f30f\\",
-    \\"location\\": {
-      \\"path\\": \\"test/dirty-2.js\\",
-      \\"lines\\": {
-        \\"begin\\": 3
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Replace ·arg·· with arg",
+    "severity": "minor",
+    "fingerprint": "50ddf265a9c04daac13cec682b10f30f",
+    "location": {
+      "path": "test/dirty-2.js",
+      "lines": {
+        "begin": 3
       }
     }
   },
   {
-    \\"type\\": \\"issue\\",
-    \\"check_name\\": \\"prettier\\",
-    \\"description\\": \\"Insert ;\\",
-    \\"severity\\": \\"minor\\",
-    \\"fingerprint\\": \\"4dde85a78b6345101364c1c0e336a483\\",
-    \\"location\\": {
-      \\"path\\": \\"test/dirty-2.js\\",
-      \\"lines\\": {
-        \\"begin\\": 5
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Insert ;",
+    "severity": "minor",
+    "fingerprint": "4dde85a78b6345101364c1c0e336a483",
+    "location": {
+      "path": "test/dirty-2.js",
+      "lines": {
+        "begin": 5
       }
     }
   },
   {
-    \\"type\\": \\"issue\\",
-    \\"check_name\\": \\"prettier\\",
-    \\"description\\": \\"Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{\\",
-    \\"severity\\": \\"minor\\",
-    \\"fingerprint\\": \\"43695942319bb6406b30cd66ae57aede\\",
-    \\"location\\": {
-      \\"path\\": \\"test/dirty.js\\",
-      \\"lines\\": {
-        \\"begin\\": 3
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
+    "severity": "minor",
+    "fingerprint": "43695942319bb6406b30cd66ae57aede",
+    "location": {
+      "path": "test/dirty.js",
+      "lines": {
+        "begin": 3
       }
     }
   },
   {
-    \\"type\\": \\"issue\\",
-    \\"check_name\\": \\"prettier\\",
-    \\"description\\": \\"Delete ⏎⏎⏎\\",
-    \\"severity\\": \\"minor\\",
-    \\"fingerprint\\": \\"6c97346ecaca37c5ccfd3663d7886069\\",
-    \\"location\\": {
-      \\"path\\": \\"test/dirty.js\\",
-      \\"lines\\": {
-        \\"begin\\": 12
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Delete ⏎⏎⏎",
+    "severity": "minor",
+    "fingerprint": "6c97346ecaca37c5ccfd3663d7886069",
+    "location": {
+      "path": "test/dirty.js",
+      "lines": {
+        "begin": 12
       }
     }
   }

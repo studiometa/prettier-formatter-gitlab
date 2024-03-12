@@ -28,7 +28,9 @@ function formatFile({ filename, input, output }) {
   return differences.map(({ offset, operation, deleteText = '', insertText = '' }) => {
     const deleteCode = showInvisibles(deleteText);
     const insertCode = showInvisibles(insertText);
-    const line = input.slice(0, offset).split('\n').length;
+    const begin = input.slice(0, offset).split('\n').length;
+    const endOffset = deleteText.split('\n').length - 1;
+    const end = begin + endOffset;
 
     let message;
     // eslint-disable-next-line default-case
@@ -49,11 +51,12 @@ function formatFile({ filename, input, output }) {
       check_name: 'prettier',
       description: message,
       severity: 'minor',
-      fingerprint: createFingerprint(filename, message, line),
+      fingerprint: createFingerprint(filename, message, begin, end),
       location: {
         path: filename,
         lines: {
-          begin: line,
+          begin,
+          end,
         },
       },
     };

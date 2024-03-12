@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### v1.1.3 - 2024.03.12
+
 ### Fixed
 
 - Fix Prettier version constraint ([9924fa5](https://github.com/studiometa/prettier-formatter-gitlab/commit/9924fa5))

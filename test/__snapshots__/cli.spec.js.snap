@@ -11,7 +11,8 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "location": {
       "path": "test/dirty-2.js",
       "lines": {
-        "begin": 3
+        "begin": 3,
+        "end": 3
       }
     }
   },
@@ -24,7 +25,8 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "location": {
       "path": "test/dirty-2.js",
       "lines": {
-        "begin": 5
+        "begin": 5,
+        "end": 5
       }
     }
   },
@@ -37,7 +39,8 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "location": {
       "path": "test/dirty.js",
       "lines": {
-        "begin": 3
+        "begin": 3,
+        "end": 11
       }
     }
   },
@@ -50,7 +53,8 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "location": {
       "path": "test/dirty.js",
       "lines": {
-        "begin": 12
+        "begin": 12,
+        "end": 15
       }
     }
   }

@@ -1,16 +1,19 @@
-const crypto = require('crypto');
-const { showInvisibles, generateDifferences } = require('prettier-linter-helpers');
+import { createHash } from 'node:crypto';
+import { showInvisibles, generateDifferences } from 'prettier-linter-helpers';
+import getFileInfo from '../utils/get-file-info.js';
 
-const getFileInfo = require('../utils/get-file-info.js');
+/**
+ * @typedef {import('../types.d.ts').FileInfo} FileInfo
+ * @typedef {import('../types.d.ts').CodeQualityReport} CodeQualityReport
+ */
 
 /**
  * Create a fingerprint for the given file and error message.
- *
- * @param  {string[]} ...args
- * @return {string}
+ * @param  {string[]} args
+ * @returns {string}
  */
 function createFingerprint(...args) {
-  const md5 = crypto.createHash('md5');
+  const md5 = createHash('md5');
   args.forEach((arg) => {
     md5.update(String(arg));
   });
@@ -18,8 +21,9 @@ function createFingerprint(...args) {
 }
 
 /**
- * [formatFile description]
- * @param {[type]} { filename, input, output } [description]
+ * Format a file.
+ * @param {Partial<FileInfo>} fileInfo
+ * @returns {CodeQualityReport}
  */
 function formatFile({ filename, input, output }) {
   const { INSERT, DELETE, REPLACE } = generateDifferences;
@@ -33,7 +37,7 @@ function formatFile({ filename, input, output }) {
     const end = begin + endOffset;
 
     let message;
-    // eslint-disable-next-line default-case
+
     switch (operation) {
       case INSERT:
         message = `Insert ${insertCode}`;
@@ -48,6 +52,7 @@ function formatFile({ filename, input, output }) {
 
     return {
       type: 'issue',
+
       check_name: 'prettier',
       description: message,
       severity: 'minor',
@@ -63,7 +68,12 @@ function formatFile({ filename, input, output }) {
   });
 }
 
-module.exports = async (files) => {
+/**
+ * GitLab formatter.
+ * @param   {string[]} files
+ * @returns {Promise<CodeQualityReport[]>}
+ */
+export async function gitlab(files) {
   const infos = await Promise.all(files.map(getFileInfo));
   return infos.reduce((acc, fileInfo) => [...acc, ...formatFile(fileInfo)], []);
-};
+}

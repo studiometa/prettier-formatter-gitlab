@@ -1,10 +1,14 @@
-const chalk = require('chalk');
-const { diffStringsUnified } = require('jest-diff');
-const getFileInfo = require('../utils/get-file-info.js');
+import chalk from 'chalk';
+import { diffStringsUnified } from 'jest-diff';
+import getFileInfo from '../utils/get-file-info.js';
+
+/**
+ * @typedef {import('../types.d.ts').FileInfo} FileInfo
+ */
 
 /**
  * Format Prettier formatting errors in diff format.
- * @param {Object} { filename, input, output } A file Prettier informations.
+ * @param {Partial<FileInfo>} fileInfo A file Prettier informations.
  */
 function formatDiff({ filename, input, output }) {
   console.log(`----------------------------------------------------
@@ -17,12 +21,17 @@ ${filename}
       omitAnnotationLines: true,
       contextLines: 2,
       expand: false,
-    })
+    }),
   );
   console.log('');
 }
 
-module.exports = async (files) => {
+/**
+ * Diff formatter.
+ * @param   {string[]} files
+ * @returns {Promise<void>}
+ */
+export async function diff(files) {
   const infos = await Promise.all(files.map(getFileInfo));
   infos.forEach(formatDiff);
-};
+}

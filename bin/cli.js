@@ -4,10 +4,10 @@ const prettierFormatterGitlab = require('../src/index.js');
 
 const [, , cmd] = process.argv;
 
-exec(cmd, async (error) => {
+exec(cmd, async (error, stdout) => {
   if (error) {
     console.log(error.message);
-    await prettierFormatterGitlab(error);
+    await prettierFormatterGitlab(stdout);
     process.exit(1);
   }
 });

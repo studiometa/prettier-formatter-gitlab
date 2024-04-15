@@ -5,14 +5,15 @@ const getFileInfo = require('../utils/get-file-info.js');
 
 /**
  * Create a fingerprint for the given file and error message.
- * @param  {String} filePath
- * @param  {String} message
- * @return {String}
+ *
+ * @param  {string[]} ...args
+ * @return {string}
  */
-function createFingerprint(filePath, message) {
+function createFingerprint(...args) {
   const md5 = crypto.createHash('md5');
-  md5.update(filePath);
-  md5.update(message);
+  args.forEach((arg) => {
+    md5.update(String(arg));
+  });
   return md5.digest('hex');
 }
 
@@ -27,7 +28,9 @@ function formatFile({ filename, input, output }) {
   return differences.map(({ offset, operation, deleteText = '', insertText = '' }) => {
     const deleteCode = showInvisibles(deleteText);
     const insertCode = showInvisibles(insertText);
-    const line = input.slice(0, offset).split('\n').length;
+    const begin = input.slice(0, offset).split('\n').length;
+    const endOffset = deleteText.split('\n').length - 1;
+    const end = begin + endOffset;
 
     let message;
     // eslint-disable-next-line default-case
@@ -44,12 +47,16 @@ function formatFile({ filename, input, output }) {
     }
 
     return {
+      type: 'issue',
+      check_name: 'prettier',
       description: message,
-      fingerprint: createFingerprint(filename, message),
+      severity: 'minor',
+      fingerprint: createFingerprint(filename, message, begin, end),
       location: {
         path: filename,
         lines: {
-          begin: line,
+          begin,
+          end,
         },
       },
     };

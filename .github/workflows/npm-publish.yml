@@ -1,21 +1,23 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
-
-name: NPM Publish
+name: Release
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - '*.*.*'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - run: npm ci
-      - uses: JS-DevTools/npm-publish@v1
+      - uses: actions/checkout@v4
+      - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: v${{ github.ref_name }}
+          body: Please refer to [CHANGELOG.md](https://github.com/studiometa/prettier-formatter-gitlab/blob/${{ github.ref_name }}/CHANGELOG.md) for details.
+          draft: false

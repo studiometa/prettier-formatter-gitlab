@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Add support for Prettier v3 ([#2](https://github.com/studiometa/prettier-formatter-gitlab/pull/2))
 - ⚠️ Remove support for Prettier v2 ([#2](https://github.com/studiometa/prettier-formatter-gitlab/pull/2))
+- ⚠️ Migrate to ESM ([165f52c](https://github.com/studiometa/prettier-formatter-gitlab/commit/165f52c))
 
 ## v1.1.4 - 2024.03.12
 

@@ -1,8 +1,6 @@
 # Prettier formatter for GitLab Code Quality
 
 [![NPM Version](https://img.shields.io/npm/v/@studiometa/prettier-formatter-gitlab.svg?style=flat-square)](https://www.npmjs.com/package/@studiometa/prettier-formatter-gitlab/)
-[![Dependency Status](https://img.shields.io/david/studiometa/prettier-formatter-gitlab.svg?label=deps&style=flat-square)](https://david-dm.org/studiometa/prettier-formatter-gitlab)
-[![devDependency Status](https://img.shields.io/david/dev/studiometa/prettier-formatter-gitlab.svg?label=devDeps&style=flat-square)](https://david-dm.org/studiometa/prettier-formatter-gitlab?type=dev)
 
 > Send Prettier errors to Gitlab's Code Quality reports.
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const { exec } = require('child_process');
-const prettierFormatterGitlab = require('../src/index.js');
+import { exec } from 'node:child_process';
+import { prettierFormatterGitLab } from '../src/index.js';
 
 const [, , cmd] = process.argv;
 
 exec(cmd, async (error, stdout) => {
   if (error) {
     console.log(error.message);
-    await prettierFormatterGitlab(stdout);
+    await prettierFormatterGitLab(stdout);
     process.exit(1);
   }
 });

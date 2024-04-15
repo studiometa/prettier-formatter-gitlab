@@ -1,25 +1,36 @@
-const fs = require('fs');
-const path = require('path');
-const prettier = require('prettier');
+import { readFileSync } from 'node:fs';
+import { relative, dirname } from 'node:path';
+import {
+  resolveConfig,
+  resolveConfigFile,
+  getFileInfo as prettierGetFileInfo,
+  check,
+  format,
+} from 'prettier';
+
+/**
+ * @typedef {import('../types.d.ts').FileInfo} FileInfo
+ */
 
 /**
  * Get Prettier file informations.
- * @param {String} filePath The absolute path to the file.
- * @return {Object} An object with Prettier informations.
+ * @param {string} filePath The absolute path to the file.
+ * @returns {FileInfo} An object with Prettier informations.
  */
-module.exports = async (filePath) => {
-  const input = fs.readFileSync(filePath, 'utf8').toString();
-  const options = await prettier.resolveConfig(filePath);
-  const configPath = await prettier.resolveConfigFile(filePath);
-  const infos = await prettier.getFileInfo(filePath, options);
-  const filename = path.relative(path.dirname(configPath), filePath);
+export default async function getFileInfo(filePath) {
+  const input = readFileSync(filePath, 'utf8').toString();
+  const [options, configPath] = await Promise.all([
+    resolveConfig(filePath),
+    resolveConfigFile(filePath),
+  ]);
+  const infos = await prettierGetFileInfo(filePath, options);
+  const filename = relative(dirname(configPath), filePath);
 
   if (!options.parser) {
     options.parser = infos.inferredParser;
   }
 
-  const isFormatted = await prettier.check(input, options);
-  const output = await prettier.format(input, options);
+  const [isFormatted, output] = await Promise.all([check(input, options), format(input, options)]);
 
   return {
     filename,
@@ -27,4 +38,4 @@ module.exports = async (filePath) => {
     output,
     isFormatted,
   };
-};
+}

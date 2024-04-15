@@ -7,7 +7,7 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Replace ·arg·· with arg",
     "severity": "minor",
-    "fingerprint": "50ddf265a9c04daac13cec682b10f30f",
+    "fingerprint": "952f33d5a4e20ba44bdffbb78bd0ff2d",
     "location": {
       "path": "test/dirty-2.js",
       "lines": {
@@ -21,7 +21,7 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Insert ;",
     "severity": "minor",
-    "fingerprint": "4dde85a78b6345101364c1c0e336a483",
+    "fingerprint": "9b44d13de7085110ed75a839caff11f8",
     "location": {
       "path": "test/dirty-2.js",
       "lines": {
@@ -35,7 +35,7 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
     "severity": "minor",
-    "fingerprint": "43695942319bb6406b30cd66ae57aede",
+    "fingerprint": "a6bd2d728de4fe92fd124e0377f606ff",
     "location": {
       "path": "test/dirty.js",
       "lines": {
@@ -49,7 +49,7 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Delete ⏎⏎⏎",
     "severity": "minor",
-    "fingerprint": "6c97346ecaca37c5ccfd3663d7886069",
+    "fingerprint": "9c9ce209fdb82e60d0a2afb93a929fe9",
     "location": {
       "path": "test/dirty.js",
       "lines": {

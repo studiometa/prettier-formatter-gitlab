@@ -7,9 +7,9 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Replace ·arg·· with arg",
     "severity": "minor",
-    "fingerprint": "952f33d5a4e20ba44bdffbb78bd0ff2d",
+    "fingerprint": "ea70e2ae0144c16efa5df45bf52a33de",
     "location": {
-      "path": "test/dirty-2.js",
+      "path": "test/__stubs__/dirty-2.js",
       "lines": {
         "begin": 3,
         "end": 3
@@ -21,9 +21,9 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Insert ;",
     "severity": "minor",
-    "fingerprint": "9b44d13de7085110ed75a839caff11f8",
+    "fingerprint": "d88816112daed6a61fd9d81e964a484b",
     "location": {
-      "path": "test/dirty-2.js",
+      "path": "test/__stubs__/dirty-2.js",
       "lines": {
         "begin": 5,
         "end": 5
@@ -35,9 +35,9 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
     "severity": "minor",
-    "fingerprint": "a6bd2d728de4fe92fd124e0377f606ff",
+    "fingerprint": "c38522eb22f56c446d6b78774d940d24",
     "location": {
-      "path": "test/dirty.js",
+      "path": "test/__stubs__/dirty.js",
       "lines": {
         "begin": 3,
         "end": 11
@@ -49,9 +49,70 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": "Delete ⏎⏎⏎",
     "severity": "minor",
-    "fingerprint": "9c9ce209fdb82e60d0a2afb93a929fe9",
+    "fingerprint": "f312c866f5c2332c733d2de24b9efa0f",
     "location": {
-      "path": "test/dirty.js",
+      "path": "test/__stubs__/dirty.js",
+      "lines": {
+        "begin": 12,
+        "end": 15
+      }
+    }
+  }
+]"
+`;
+
+exports[`prettier-formatter-gitlab cli should create a code quality report file 2`] = `
+"[
+  {
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Replace ·arg·· with arg",
+    "severity": "minor",
+    "fingerprint": "ea70e2ae0144c16efa5df45bf52a33de",
+    "location": {
+      "path": "test/__stubs__/dirty-2.js",
+      "lines": {
+        "begin": 3,
+        "end": 3
+      }
+    }
+  },
+  {
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Insert ;",
+    "severity": "minor",
+    "fingerprint": "d88816112daed6a61fd9d81e964a484b",
+    "location": {
+      "path": "test/__stubs__/dirty-2.js",
+      "lines": {
+        "begin": 5,
+        "end": 5
+      }
+    }
+  },
+  {
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
+    "severity": "minor",
+    "fingerprint": "c38522eb22f56c446d6b78774d940d24",
+    "location": {
+      "path": "test/__stubs__/dirty.js",
+      "lines": {
+        "begin": 3,
+        "end": 11
+      }
+    }
+  },
+  {
+    "type": "issue",
+    "check_name": "prettier",
+    "description": "Delete ⏎⏎⏎",
+    "severity": "minor",
+    "fingerprint": "f312c866f5c2332c733d2de24b9efa0f",
+    "location": {
+      "path": "test/__stubs__/dirty.js",
       "lines": {
         "begin": 12,
         "end": 15

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Add support for both `-c` or `-l` flag from the Prettier command ([741f555](https://github.com/studiometa/prettier-formatter-gitlab/commit/741f555))
+
 ## v2.0.0-alpha.0 - 2024.04.15
 
 ### Changed

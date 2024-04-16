@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## v2.0.0 - 2024.04.16
+
+### Changed
+
+- Add support for Prettier v3 ([#2](https://github.com/studiometa/prettier-formatter-gitlab/pull/2))
+- ⚠️ Remove support for Prettier v2 ([#2](https://github.com/studiometa/prettier-formatter-gitlab/pull/2))
+- ⚠️ Migrate to ESM ([165f52c](https://github.com/studiometa/prettier-formatter-gitlab/commit/165f52c))
+
+### Added
+
+- Add support for both `-c` or `-l` flag from the Prettier command ([741f555](https://github.com/studiometa/prettier-formatter-gitlab/commit/741f555))
+
 ## v2.0.0-alpha.2 - 2024.04.16
 
 ### Fixed

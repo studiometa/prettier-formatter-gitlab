@@ -11,7 +11,6 @@ const {
   CI_CONFIG_PATH = '.gitlab-ci.yml',
   CI_JOB_NAME,
   CI_PROJECT_DIR = cwd(),
-  PRETTIER_CODE_QUALITY_REPORT,
 } = env;
 
 /**
@@ -39,9 +38,14 @@ function getOutputPath() {
  */
 function parse(results) {
   return results
-    .toString()
     .split('\n')
-    .filter((line) => line);
+    .filter(
+      (line) =>
+        Boolean(line) &&
+        !line.startsWith('Checking formatting...') &&
+        !line.includes('Code style issues found'),
+    )
+    .map((line) => line.replace('[warn] ', ''));
 }
 
 /**
@@ -50,6 +54,7 @@ function parse(results) {
  * @returns {Promise<void>}
  */
 export async function prettierFormatterGitLab(results) {
+  const { PRETTIER_CODE_QUALITY_REPORT } = env;
   if (CI_JOB_NAME || PRETTIER_CODE_QUALITY_REPORT) {
     const files = parse(results);
 

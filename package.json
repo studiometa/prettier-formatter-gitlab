@@ -43,7 +43,7 @@
     "@studiometa/prettier-config": "4.1.0",
     "bun": "1.1.37",
     "eslint": "9.4.0",
-    "prettier": "3.3.3"
+    "prettier": "3.4.2"
   },
   "dependencies": {
     "chalk": "^5.3.0",

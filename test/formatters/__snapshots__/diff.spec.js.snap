@@ -4,26 +4,26 @@ exports[`The diff formatter should return diff formatted reports about the given
 "----------------------------------------------------
 test/__stubs__/dirty.js
 ----------------------------------------------------
-\x1B[33m@@ -1,18 +1,7 @@\x1B[39m
-\x1B[2m  /* eslint-disable */\x1B[22m
+@@ -1,18 +1,7 @@
+  /* eslint-disable */
 
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m- function foo(\x1B[7m \x1B[27marg\x1B[7m  \x1B[27m) {\x1B[39m
-\x1B[32m+ function foo(arg) {\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[2m    const data = arg.split(',');\x1B[22m
+-
+-
+-
+-
+-
+-
+- function foo( arg  ) {
++ function foo(arg) {
+-
+-
+    const data = arg.split(',');
 
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[2m    return data;\x1B[22m
-\x1B[2m  }\x1B[22m
+-
+-
+-
+    return data;
+  }
 "
 `;
 

@@ -7,16 +7,16 @@ exports[`The prettierFormatterGitLab function should work with the \`-c\` or \`-
 "----------------------------------------------------
 test/__stubs__/dirty-2.js
 ----------------------------------------------------
-\x1B[33m@@ -1,7 +1,7 @@\x1B[39m
-\x1B[2m  /* eslint-disable */\x1B[22m
+@@ -1,7 +1,7 @@
+  /* eslint-disable */
 
-\x1B[31m- function foo(\x1B[7m \x1B[27marg\x1B[7m  \x1B[27m) {\x1B[39m
-\x1B[32m+ function foo(arg) {\x1B[39m
-\x1B[2m    const data = arg.split(',');\x1B[22m
-\x1B[31m-   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`\x1B[39m
-\x1B[32m+   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`\x1B[7m;\x1B[27m\x1B[39m
-\x1B[2m    return data;\x1B[22m
-\x1B[2m  }\x1B[22m
+- function foo( arg  ) {
++ function foo(arg) {
+    const data = arg.split(',');
+-   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`
++   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`;
+    return data;
+  }
 "
 ,
   ],
@@ -25,26 +25,26 @@ test/__stubs__/dirty-2.js
 "----------------------------------------------------
 test/__stubs__/dirty.js
 ----------------------------------------------------
-\x1B[33m@@ -1,18 +1,7 @@\x1B[39m
-\x1B[2m  /* eslint-disable */\x1B[22m
+@@ -1,18 +1,7 @@
+  /* eslint-disable */
 
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m- function foo(\x1B[7m \x1B[27marg\x1B[7m  \x1B[27m) {\x1B[39m
-\x1B[32m+ function foo(arg) {\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[2m    const data = arg.split(',');\x1B[22m
+-
+-
+-
+-
+-
+-
+- function foo( arg  ) {
++ function foo(arg) {
+-
+-
+    const data = arg.split(',');
 
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[2m    return data;\x1B[22m
-\x1B[2m  }\x1B[22m
+-
+-
+-
+    return data;
+  }
 "
 ,
   ],
@@ -85,16 +85,16 @@ SyntaxError: Unexpected token, expected "(" (3:13)
 "----------------------------------------------------
 test/__stubs__/dirty-2.js
 ----------------------------------------------------
-\x1B[33m@@ -1,7 +1,7 @@\x1B[39m
-\x1B[2m  /* eslint-disable */\x1B[22m
+@@ -1,7 +1,7 @@
+  /* eslint-disable */
 
-\x1B[31m- function foo(\x1B[7m \x1B[27marg\x1B[7m  \x1B[27m) {\x1B[39m
-\x1B[32m+ function foo(arg) {\x1B[39m
-\x1B[2m    const data = arg.split(',');\x1B[22m
-\x1B[31m-   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`\x1B[39m
-\x1B[32m+   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`\x1B[7m;\x1B[27m\x1B[39m
-\x1B[2m    return data;\x1B[22m
-\x1B[2m  }\x1B[22m
+- function foo( arg  ) {
++ function foo(arg) {
+    const data = arg.split(',');
+-   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`
++   const message = \`Cras non justo iaculis, placerat tortor non, venenatis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ut neque a justo efficitur tristique. Aliquam consequat convallis sagittis. Curabitur venenatis imperdiet fermentum. Curabitur euismod sit amet mi eu tristique. Phasellus leo nisi, tempor efficitur laoreet vitae, rutrum id justo. Nullam ac mi vehicula, rhoncus turpis a, mattis odio. Donec id condimentum metus. Vivamus posuere libero nec orci volutpat, in euismod dolor ornare. Cras tincidunt gravida ante, sed dictum nulla posuere ut.\`;
+    return data;
+  }
 "
 ,
   ],
@@ -103,26 +103,26 @@ test/__stubs__/dirty-2.js
 "----------------------------------------------------
 test/__stubs__/dirty.js
 ----------------------------------------------------
-\x1B[33m@@ -1,18 +1,7 @@\x1B[39m
-\x1B[2m  /* eslint-disable */\x1B[22m
+@@ -1,18 +1,7 @@
+  /* eslint-disable */
 
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m- function foo(\x1B[7m \x1B[27marg\x1B[7m  \x1B[27m) {\x1B[39m
-\x1B[32m+ function foo(arg) {\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[2m    const data = arg.split(',');\x1B[22m
+-
+-
+-
+-
+-
+-
+- function foo( arg  ) {
++ function foo(arg) {
+-
+-
+    const data = arg.split(',');
 
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[31m-\x1B[39m
-\x1B[2m    return data;\x1B[22m
-\x1B[2m  }\x1B[22m
+-
+-
+-
+    return data;
+  }
 "
 ,
   ],

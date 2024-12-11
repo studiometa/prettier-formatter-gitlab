@@ -62,15 +62,15 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": 
 "SyntaxError: Unexpected token, expected "(" (3:13)
-  1 | /* eslint-disable */
-  2 |
-> 3 | function foo#####( arg  ) {
-    |             ^
-  4 |   return arg;
-  5 | }
-  6 |"
+\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
+ \x1B[90m 2 |\x1B[39m
+\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
+ \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
+ \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
+ \x1B[90m 5 |\x1B[39m }
+ \x1B[90m 6 |\x1B[39m\x1B[0m"
 ,
-    "fingerprint": "2c7e0de9e9eff8b589318b043ed783db",
+    "fingerprint": "462882d90971b8c9dcaaa2b4d74d1da6",
     "location": {
       "path": "test/__stubs__/syntax-error.js",
     },
@@ -142,15 +142,15 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
     "check_name": "prettier",
     "description": 
 "SyntaxError: Unexpected token, expected "(" (3:13)
-  1 | /* eslint-disable */
-  2 |
-> 3 | function foo#####( arg  ) {
-    |             ^
-  4 |   return arg;
-  5 | }
-  6 |"
+\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
+ \x1B[90m 2 |\x1B[39m
+\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
+ \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
+ \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
+ \x1B[90m 5 |\x1B[39m }
+ \x1B[90m 6 |\x1B[39m\x1B[0m"
 ,
-    "fingerprint": "2c7e0de9e9eff8b589318b043ed783db",
+    "fingerprint": "462882d90971b8c9dcaaa2b4d74d1da6",
     "location": {
       "path": "test/__stubs__/syntax-error.js",
     },

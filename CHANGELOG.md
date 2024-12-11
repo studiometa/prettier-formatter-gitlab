@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## v2.1.0-alpha.1 - 2024.12.11
+
+### Fixed
+
+- Fix NPM publish ([b5cee7b](https://github.com/studiometa/prettier-formatter-gitlab/commit/b5cee7b))
+
+### Dependencies
+
+- Update dependency prettier to v3.4.2 ([#38](https://github.com/studiometa/prettier-formatter-gitlab/pull/38), [2139c1c](https://github.com/studiometa/prettier-formatter-gitlab/commit/2139c1c))
+- Update dependency @studiometa/eslint-config to v4.1.0 ([#32](https://github.com/studiometa/prettier-formatter-gitlab/pull/32), [3b4cc1c](https://github.com/studiometa/prettier-formatter-gitlab/commit/3b4cc1c))
+
 ## v2.1.0-alpha.0 - 2024.12.11
 
 ### Added

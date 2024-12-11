@@ -1,0 +1,53 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The getPrettierFileInfos function should return information about a given file 1`] = `
+{
+  "filename": "test/__stubs__/dirty.js",
+  "input": 
+"/* eslint-disable */
+
+
+
+
+
+
+
+function foo( arg  ) {
+
+
+  const data = arg.split(',');
+
+
+
+
+  return data;
+}
+"
+,
+  "isFormatted": false,
+  "output": 
+"/* eslint-disable */
+
+function foo(arg) {
+  const data = arg.split(',');
+
+  return data;
+}
+"
+,
+}
+`;
+
+exports[`The getPrettierFileInfos function should handle files with syntax errors 1`] = `
+{
+  "error": [SyntaxError: Unexpected token, expected "(" (3:13)
+\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
+ \x1B[90m 2 |\x1B[39m
+\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
+ \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
+ \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
+ \x1B[90m 5 |\x1B[39m }
+ \x1B[90m 6 |\x1B[39m\x1B[0m],
+  "filename": "test/__stubs__/syntax-error.js",
+}
+`;

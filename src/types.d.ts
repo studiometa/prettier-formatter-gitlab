@@ -1,8 +1,9 @@
 export interface FileInfo {
    filename: string;
-   input: string;
-   output: string;
-   isFormatted: boolean;
+   input?: string;
+   output?: string;
+   isFormatted?: boolean;
+   error?: Error;
 }
 
 export interface CodeQualityReport {

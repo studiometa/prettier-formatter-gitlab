@@ -5,6 +5,7 @@ import { join, resolve, dirname } from 'node:path';
 import yaml from 'js-yaml';
 import { diff } from './formatters/diff.js';
 import { gitlab } from './formatters/gitlab.js';
+import { parse } from './utils/parse-prettier-results.js';
 
 const {
   // Used as a fallback for local testing.
@@ -32,23 +33,6 @@ function getOutputPath() {
 }
 
 /**
- * Parse the `prettier --list-different` output to format a GitLab Code Quality report JSON.
- * @param  {string}        results The output of a `prettier --list-different` failing command.
- * @returns {Array<object>}
- */
-function parse(results) {
-  return results
-    .split('\n')
-    .filter(
-      (line) =>
-        Boolean(line) &&
-        !line.startsWith('Checking formatting...') &&
-        !line.includes('Code style issues found'),
-    )
-    .map((line) => line.replace('[warn] ', ''));
-}
-
-/**
  * Format Prettier results for GitLab Code Quality Reports.
  * @param   {string} results
  * @returns {Promise<void>}
@@ -58,7 +42,8 @@ export async function prettierFormatterGitLab(results) {
   if (CI_JOB_NAME || PRETTIER_CODE_QUALITY_REPORT) {
     const files = parse(results);
 
-    const [data] = await Promise.all([gitlab(files), diff(files)]);
+    const [data, diffs] = await Promise.all([gitlab(files), diff(files)]);
+    diffs.forEach((diff) => console.log(diff));
     const outputPath = PRETTIER_CODE_QUALITY_REPORT || getOutputPath();
     const dir = dirname(outputPath);
     mkdirSync(dir, { recursive: true });

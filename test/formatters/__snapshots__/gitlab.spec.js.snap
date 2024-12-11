@@ -1,0 +1,58 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The gitlab formatter should return gitlab formatted reports about the given files 1`] = `
+[
+  {
+    "check_name": "prettier",
+    "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
+    "fingerprint": "c38522eb22f56c446d6b78774d940d24",
+    "location": {
+      "lines": {
+        "begin": 3,
+        "end": 11,
+      },
+      "path": "test/__stubs__/dirty.js",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+  {
+    "check_name": "prettier",
+    "description": "Delete ⏎⏎⏎",
+    "fingerprint": "f312c866f5c2332c733d2de24b9efa0f",
+    "location": {
+      "lines": {
+        "begin": 12,
+        "end": 15,
+      },
+      "path": "test/__stubs__/dirty.js",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+]
+`;
+
+exports[`The gitlab formatter should handle files with syntax errors 1`] = `
+[
+  {
+    "check_name": "prettier",
+    "description": 
+"SyntaxError: Unexpected token, expected "(" (3:13)
+\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
+ \x1B[90m 2 |\x1B[39m
+\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
+ \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
+ \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
+ \x1B[90m 5 |\x1B[39m }
+ \x1B[90m 6 |\x1B[39m\x1B[0m"
+,
+    "fingerprint": "462882d90971b8c9dcaaa2b4d74d1da6",
+    "location": {
+      "path": "test/__stubs__/syntax-error.js",
+    },
+    "severity": "major",
+    "type": "issue",
+  },
+]
+`;

@@ -1,123 +1,161 @@
 // Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`prettier-formatter-gitlab cli should create a code quality report file 1`] = `
-"[
+exports[`prettier-formatter-gitlab cli should create a code quality report file with prettier -l 1`] = `
+[
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Replace ·arg·· with arg",
-    "severity": "minor",
     "fingerprint": "ea70e2ae0144c16efa5df45bf52a33de",
     "location": {
-      "path": "test/__stubs__/dirty-2.js",
       "lines": {
         "begin": 3,
-        "end": 3
-      }
-    }
+        "end": 3,
+      },
+      "path": "test/__stubs__/dirty-2.js",
+    },
+    "severity": "minor",
+    "type": "issue",
   },
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Insert ;",
-    "severity": "minor",
     "fingerprint": "d88816112daed6a61fd9d81e964a484b",
     "location": {
-      "path": "test/__stubs__/dirty-2.js",
       "lines": {
         "begin": 5,
-        "end": 5
-      }
-    }
+        "end": 5,
+      },
+      "path": "test/__stubs__/dirty-2.js",
+    },
+    "severity": "minor",
+    "type": "issue",
   },
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
-    "severity": "minor",
     "fingerprint": "c38522eb22f56c446d6b78774d940d24",
     "location": {
-      "path": "test/__stubs__/dirty.js",
       "lines": {
         "begin": 3,
-        "end": 11
-      }
-    }
+        "end": 11,
+      },
+      "path": "test/__stubs__/dirty.js",
+    },
+    "severity": "minor",
+    "type": "issue",
   },
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Delete ⏎⏎⏎",
-    "severity": "minor",
     "fingerprint": "f312c866f5c2332c733d2de24b9efa0f",
     "location": {
-      "path": "test/__stubs__/dirty.js",
       "lines": {
         "begin": 12,
-        "end": 15
-      }
-    }
-  }
-]"
+        "end": 15,
+      },
+      "path": "test/__stubs__/dirty.js",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+  {
+    "check_name": "prettier",
+    "description": 
+"SyntaxError: Unexpected token, expected "(" (3:13)
+  1 | /* eslint-disable */
+  2 |
+> 3 | function foo#####( arg  ) {
+    |             ^
+  4 |   return arg;
+  5 | }
+  6 |"
+,
+    "fingerprint": "2c7e0de9e9eff8b589318b043ed783db",
+    "location": {
+      "path": "test/__stubs__/syntax-error.js",
+    },
+    "severity": "major",
+    "type": "issue",
+  },
+]
 `;
 
-exports[`prettier-formatter-gitlab cli should create a code quality report file 2`] = `
-"[
+exports[`prettier-formatter-gitlab cli should create a code quality report file with prettier -c 1`] = `
+[
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Replace ·arg·· with arg",
-    "severity": "minor",
     "fingerprint": "ea70e2ae0144c16efa5df45bf52a33de",
     "location": {
-      "path": "test/__stubs__/dirty-2.js",
       "lines": {
         "begin": 3,
-        "end": 3
-      }
-    }
+        "end": 3,
+      },
+      "path": "test/__stubs__/dirty-2.js",
+    },
+    "severity": "minor",
+    "type": "issue",
   },
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Insert ;",
-    "severity": "minor",
     "fingerprint": "d88816112daed6a61fd9d81e964a484b",
     "location": {
-      "path": "test/__stubs__/dirty-2.js",
       "lines": {
         "begin": 5,
-        "end": 5
-      }
-    }
+        "end": 5,
+      },
+      "path": "test/__stubs__/dirty-2.js",
+    },
+    "severity": "minor",
+    "type": "issue",
   },
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Replace ⏎⏎⏎⏎⏎⏎function·foo(·arg··)·{⏎⏎ with function·foo(arg)·{",
-    "severity": "minor",
     "fingerprint": "c38522eb22f56c446d6b78774d940d24",
     "location": {
-      "path": "test/__stubs__/dirty.js",
       "lines": {
         "begin": 3,
-        "end": 11
-      }
-    }
+        "end": 11,
+      },
+      "path": "test/__stubs__/dirty.js",
+    },
+    "severity": "minor",
+    "type": "issue",
   },
   {
-    "type": "issue",
     "check_name": "prettier",
     "description": "Delete ⏎⏎⏎",
-    "severity": "minor",
     "fingerprint": "f312c866f5c2332c733d2de24b9efa0f",
     "location": {
-      "path": "test/__stubs__/dirty.js",
       "lines": {
         "begin": 12,
-        "end": 15
-      }
-    }
-  }
-]"
+        "end": 15,
+      },
+      "path": "test/__stubs__/dirty.js",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+  {
+    "check_name": "prettier",
+    "description": 
+"SyntaxError: Unexpected token, expected "(" (3:13)
+  1 | /* eslint-disable */
+  2 |
+> 3 | function foo#####( arg  ) {
+    |             ^
+  4 |   return arg;
+  5 | }
+  6 |"
+,
+    "fingerprint": "2c7e0de9e9eff8b589318b043ed783db",
+    "location": {
+      "path": "test/__stubs__/syntax-error.js",
+    },
+    "severity": "major",
+    "type": "issue",
+  },
+]
 `;

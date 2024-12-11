@@ -1,0 +1,43 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The diff formatter should return diff formatted reports about the given files 1`] = `
+"----------------------------------------------------
+test/__stubs__/dirty.js
+----------------------------------------------------
+\x1B[33m@@ -1,18 +1,7 @@\x1B[39m
+\x1B[2m  /* eslint-disable */\x1B[22m
+
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m- function foo(\x1B[7m \x1B[27marg\x1B[7m  \x1B[27m) {\x1B[39m
+\x1B[32m+ function foo(arg) {\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[2m    const data = arg.split(',');\x1B[22m
+
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[31m-\x1B[39m
+\x1B[2m    return data;\x1B[22m
+\x1B[2m  }\x1B[22m
+"
+`;
+
+exports[`The diff formatter should handle files with syntax errors 1`] = `
+"----------------------------------------------------
+test/__stubs__/syntax-error.js
+----------------------------------------------------
+SyntaxError: Unexpected token, expected "(" (3:13)
+\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
+ \x1B[90m 2 |\x1B[39m
+\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
+ \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
+ \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
+ \x1B[90m 5 |\x1B[39m }
+ \x1B[90m 6 |\x1B[39m\x1B[0m
+"
+`;

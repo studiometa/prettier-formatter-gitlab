@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { showInvisibles, generateDifferences } from 'prettier-linter-helpers';
-import getFileInfo from '../utils/get-file-info.js';
+import { getPrettierFileInfos } from '../utils/get-prettier-file-infos.js';
 
 /**
  * @typedef {import('../types.d.ts').FileInfo} FileInfo
@@ -23,10 +23,26 @@ function createFingerprint(...args) {
 /**
  * Format a file.
  * @param {Partial<FileInfo>} fileInfo
- * @returns {CodeQualityReport}
+ * @returns {CodeQualityReport[]}
  */
-function formatFile({ filename, input, output }) {
+function formatFile({ filename, input, output, error }) {
   const { INSERT, DELETE, REPLACE } = generateDifferences;
+
+  if (error) {
+    return [
+      {
+        type: 'issue',
+        check_name: 'prettier',
+        description: String(error),
+        severity: 'major',
+        fingerprint: createFingerprint(filename, error.message),
+        location: {
+          path: filename,
+        },
+      },
+    ];
+  }
+
   const differences = generateDifferences(input, output);
 
   return differences.map(({ offset, operation, deleteText = '', insertText = '' }) => {
@@ -74,6 +90,6 @@ function formatFile({ filename, input, output }) {
  * @returns {Promise<CodeQualityReport[]>}
  */
 export async function gitlab(files) {
-  const infos = await Promise.all(files.map(getFileInfo));
+  const infos = await Promise.all(files.map((file) => getPrettierFileInfos(file)));
   return infos.reduce((acc, fileInfo) => [...acc, ...formatFile(fileInfo)], []);
 }

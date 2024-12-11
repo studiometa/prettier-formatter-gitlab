@@ -4,3 +4,4 @@ node_modules/
 /.data/
 gl-prettier-codequality.json
 /.eslintcache
+/coverage/

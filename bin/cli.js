@@ -8,7 +8,7 @@ if (cmd) {
   exec(cmd, async (error, stdout, stderr) => {
     if (error) {
       console.log(error.message);
-      await prettierFormatterGitLab(stderr || stdout);
+      await prettierFormatterGitLab(stdout + stderr);
       process.exit(1);
     }
   });

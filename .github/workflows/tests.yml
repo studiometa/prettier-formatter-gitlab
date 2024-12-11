@@ -11,12 +11,21 @@ jobs:
   unit:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: npm
-    - name: Install modules
-      run: npm install
-    - name: Run tests
-      run: npm run test -- --coverage
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install modules
+        run: npm install
+      - name: Run tests
+        run: npm run test -- --coverage --coverage-reporter lcov
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          flags: unittests
+          fail_ci_if_error: false
+          verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

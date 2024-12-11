@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## v2.1.0-alpha.0 - 2024.12.11
+
+### Added
+
+- Add support for syntax errors ([#42](https://github.com/studiometa/prettier-formatter-gitlab/issues/42), [#43](https://github.com/studiometa/prettier-formatter-gitlab/pull/43), [08fde17](https://github.com/studiometa/prettier-formatter-gitlab/commit/08fde17))
+
 ## v2.0.0 - 2024.04.16
 
 ### Changed

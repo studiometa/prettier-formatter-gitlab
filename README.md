@@ -1,4 +1,4 @@
-# Prettier formatter for GitLab Code Quality
+# @studiometa/prettier-formatter-gitlab
 
 [![NPM Version](https://img.shields.io/npm/v/@studiometa/prettier-formatter-gitlab.svg?style=flat&colorB=3e63dd&colorA=414853)](https://www.npmjs.com/package/@studiometa/prettier-formatter-gitlab/)
 [![Downloads](https://img.shields.io/npm/dm/@studiometa/prettier-formatter-gitlab?style=flat&colorB=3e63dd&colorA=414853)](https://www.npmjs.com/package/@studiometa/prettier-formatter-gitlab/)
@@ -6,7 +6,7 @@
 [![Dependency Status](https://img.shields.io/librariesio/release/npm/@studiometa/prettier-formatter-gitlab?style=flat&colorB=3e63dd&colorA=414853)](https://david-dm.org/studiometa/prettier-formatter-gitlab)
 ![Codecov](https://img.shields.io/codecov/c/github/studiometa/prettier-formatter-gitlab?style=flat&colorB=3e63dd&colorA=414853)
 
-> Send Prettier errors to Gitlab's Code Quality reports.
+Send Prettier errors to Gitlab's Code Quality reports.
 
 ## Installation
 
@@ -28,11 +28,11 @@ The report file path will be read from the `PRETTIER_CODE_QUALITY_REPORT` enviro
 
 ```yaml
 # .gitlab-ci.yml
-eslint:
+prettier:
   image: node:20
   script:
     - npm ci
-    - prettier-formatter-gitlab 'prettier -l src/'
+    - npx prettier-formatter-gitlab 'prettier -l src/'
   artifacts:
     reports:
       codequality: gl-codequality.json

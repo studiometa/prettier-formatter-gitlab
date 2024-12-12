@@ -1,6 +1,6 @@
 {
   "name": "@studiometa/prettier-formatter-gitlab",
-  "version": "2.1.0-alpha.1",
+  "version": "2.1.0",
   "description": "A Prettier formatter for the GitLab Code Quality report",
   "main": "src/index.js",
   "type": "module",
@@ -42,7 +42,7 @@
     "@studiometa/eslint-config": "4.1.0",
     "@studiometa/prettier-config": "4.1.0",
     "bun": "1.1.38",
-    "eslint": "9.4.0",
+    "eslint": "9.16.0",
     "prettier": "3.4.2"
   },
   "dependencies": {

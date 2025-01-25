@@ -1,0 +1,11 @@
+.ref:
+  script:
+    - npm run lint
+
+prettier:
+  script:
+    - !reference [.ref, script]
+  artifacts:
+    reports:
+      codequalit: gl-codequality.json
+

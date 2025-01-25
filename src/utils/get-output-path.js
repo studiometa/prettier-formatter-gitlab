@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync, lstatSync } from 'node:fs';
 import { cwd, env } from 'node:process';
 import { join, resolve } from 'node:path';
 import { parseDocument } from 'yaml';
@@ -25,7 +25,16 @@ export function getOutputPath() {
     CI_PROJECT_DIR = cwd(),
   } = env;
 
-  const doc = parseDocument(readFileSync(join(CI_PROJECT_DIR, CI_CONFIG_PATH), 'utf-8'), {
+  const configPath = join(CI_PROJECT_DIR, CI_CONFIG_PATH);
+
+  if (!existsSync(configPath) || !lstatSync(configPath).isFile()) {
+    throw new Error(
+      'Could not resolve .gitlab-ci.yml to automatically detect report artifact path.' +
+        ' Please manually provide a path via the ESLINT_CODE_QUALITY_REPORT variable.',
+    );
+  }
+
+  const doc = parseDocument(readFileSync(configPath, 'utf-8'), {
     version: '1.1',
     customTags: [referenceTag],
   });

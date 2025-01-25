@@ -1,36 +1,11 @@
 #!/usr/bin/env node
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
-import { cwd, env } from 'node:process';
-import { join, resolve, dirname } from 'node:path';
-import yaml from 'js-yaml';
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { env } from 'node:process';
+import { dirname } from 'node:path';
 import { diff } from './formatters/diff.js';
 import { gitlab } from './formatters/gitlab.js';
 import { parse } from './utils/parse-prettier-results.js';
-
-const {
-  // Used as a fallback for local testing.
-  CI_CONFIG_PATH = '.gitlab-ci.yml',
-  CI_JOB_NAME,
-  CI_PROJECT_DIR = cwd(),
-} = env;
-
-/**
- * Get the output path for the report file.
- * @returns {string}
- */
-function getOutputPath() {
-  const jobs = yaml.load(readFileSync(join(CI_PROJECT_DIR, CI_CONFIG_PATH), 'utf-8'));
-  const { artifacts } = jobs[CI_JOB_NAME];
-  const location = artifacts && artifacts.reports && artifacts.reports.codequality;
-  const msg = `Expected ${CI_JOB_NAME}.artifacts.reports.codequality to be one exact path`;
-  if (!location) {
-    throw new Error(`${msg}, but no value was found.`);
-  }
-  if (Array.isArray(location)) {
-    throw new Error(`${msg}, but found an array instead.`);
-  }
-  return resolve(CI_PROJECT_DIR, location);
-}
+import { getOutputPath } from './utils/get-output-path.js';
 
 /**
  * Format Prettier results for GitLab Code Quality Reports.
@@ -38,7 +13,7 @@ function getOutputPath() {
  * @returns {Promise<void>}
  */
 export async function prettierFormatterGitLab(results) {
-  const { PRETTIER_CODE_QUALITY_REPORT } = env;
+  const { CI_JOB_NAME, PRETTIER_CODE_QUALITY_REPORT } = env;
   if (CI_JOB_NAME || PRETTIER_CODE_QUALITY_REPORT) {
     const files = parse(results);
 

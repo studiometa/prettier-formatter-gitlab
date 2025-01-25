@@ -1,6 +1,6 @@
 {
   "name": "@studiometa/prettier-formatter-gitlab",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A Prettier formatter for the GitLab Code Quality report",
   "main": "src/index.js",
   "type": "module",

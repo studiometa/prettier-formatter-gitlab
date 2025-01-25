@@ -4,6 +4,34 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
 [
   {
     "check_name": "prettier",
+    "description": "Delete ⏎",
+    "fingerprint": "994d9053d8e5f73c098f2bcfadec786c",
+    "location": {
+      "lines": {
+        "begin": 11,
+        "end": 12,
+      },
+      "path": "test/__stubs__/.gitlab-ci.fail.yml",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+  {
+    "check_name": "prettier",
+    "description": "Delete ⏎",
+    "fingerprint": "20c9ca526d0a43e3075a3e0f74135991",
+    "location": {
+      "lines": {
+        "begin": 11,
+        "end": 12,
+      },
+      "path": "test/__stubs__/.gitlab-ci.yml",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+  {
+    "check_name": "prettier",
     "description": "Replace ·arg·· with arg",
     "fingerprint": "ea70e2ae0144c16efa5df45bf52a33de",
     "location": {
@@ -82,6 +110,34 @@ exports[`prettier-formatter-gitlab cli should create a code quality report file 
 
 exports[`prettier-formatter-gitlab cli should create a code quality report file with prettier -c 1`] = `
 [
+  {
+    "check_name": "prettier",
+    "description": "Delete ⏎",
+    "fingerprint": "994d9053d8e5f73c098f2bcfadec786c",
+    "location": {
+      "lines": {
+        "begin": 11,
+        "end": 12,
+      },
+      "path": "test/__stubs__/.gitlab-ci.fail.yml",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
+  {
+    "check_name": "prettier",
+    "description": "Delete ⏎",
+    "fingerprint": "20c9ca526d0a43e3075a3e0f74135991",
+    "location": {
+      "lines": {
+        "begin": 11,
+        "end": 12,
+      },
+      "path": "test/__stubs__/.gitlab-ci.yml",
+    },
+    "severity": "minor",
+    "type": "issue",
+  },
   {
     "check_name": "prettier",
     "description": "Replace ·arg·· with arg",

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix parsing of !reference tag ([#50](https://github.com/studiometa/prettier-formatter-gitlab/issues/50), [#59](https://github.com/studiometa/prettier-formatter-gitlab/pull/59), [a937d55](https://github.com/studiometa/prettier-formatter-gitlab/commit/a937d55))
+
 ## v2.1.0 - 2024.12.12
 
 ### Added

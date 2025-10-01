@@ -1,4 +1,4 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
 exports[`The prettierFormatterGitLab function should work with the \`-c\` or \`-l\` flag 1`] = `
 [
@@ -45,22 +45,6 @@ test/__stubs__/dirty.js
 -
     return data;
   }
-"
-,
-  ],
-  [
-    
-"----------------------------------------------------
-test/__stubs__/syntax-error.js
-----------------------------------------------------
-SyntaxError: Unexpected token, expected "(" (3:13)
-\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
- \x1B[90m 2 |\x1B[39m
-\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
- \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
- \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
- \x1B[90m 5 |\x1B[39m }
- \x1B[90m 6 |\x1B[39m\x1B[0m
 "
 ,
   ],

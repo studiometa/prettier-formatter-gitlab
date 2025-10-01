@@ -4,13 +4,14 @@
  * @returns {Array<string>}
  */
 export function parse(results) {
-  const files = [];
+  const files = new Set();
   let errorIndex = 0;
 
   for (const line of results.split('\n')) {
     if (
       line.trim() === '' ||
       line.startsWith('Checking formatting...') ||
+      line.startsWith('Error occurred when') ||
       line.includes('Code style issues found')
     ) {
       continue;
@@ -19,7 +20,7 @@ export function parse(results) {
     if (line.startsWith('[error]')) {
       if (errorIndex === 0) {
         const [maybeFile] = line.split(':');
-        files.push(maybeFile.replace('[error]', '').trim());
+        files.add(maybeFile.replace('[error]', '').trim());
       }
       errorIndex += 1;
       continue;
@@ -27,8 +28,8 @@ export function parse(results) {
       errorIndex = 0;
     }
 
-    files.push(line.replace('[warn] ', '').trim());
+    files.add(line.replace('[warn] ', '').trim());
   }
 
-  return files;
+  return Array.from(files);
 }

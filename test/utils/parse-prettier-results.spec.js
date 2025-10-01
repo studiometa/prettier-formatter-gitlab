@@ -11,6 +11,32 @@ describe('The parse function', () => {
     expect(parse(output)).toEqual(['test/__stubs__/dirty-2.js', 'test/__stubs__/dirty.js']);
   });
 
+  it('should parse new output of the `prettier -c` command', () => {
+    const output = `Checking formatting...
+[warn] test/__stubs__/.gitlab-ci.fail.yml
+[warn] test/__stubs__/.gitlab-ci.yml
+[warn] test/__stubs__/dirty-2.js
+[warn] test/__stubs__/dirty.js
+test/__stubs__/syntax-error.js
+[error] test/__stubs__/syntax-error.js: SyntaxError: Unexpected token, expected "(" (3:13)
+[error]   1 | /* eslint-disable */
+[error]   2 |
+[error] > 3 | function foo#####( arg  ) {
+[error]     |             ^
+[error]   4 |   return arg;
+[error]   5 | }
+[error]   6 |
+Error occurred when checking code style in the above file.`;
+
+    expect(parse(output)).toEqual([
+      'test/__stubs__/.gitlab-ci.fail.yml',
+      'test/__stubs__/.gitlab-ci.yml',
+      'test/__stubs__/dirty-2.js',
+      'test/__stubs__/dirty.js',
+      'test/__stubs__/syntax-error.js',
+    ]);
+  });
+
   it('should parse output of the `prettier --list-different` command', () => {
     const output = `test/__stubs__/dirty-2.js
 test/__stubs__/dirty.js`;

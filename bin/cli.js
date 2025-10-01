@@ -5,11 +5,20 @@ import { prettierFormatterGitLab } from '../src/index.js';
 const cmd = process.argv[2];
 
 if (cmd) {
-  exec(cmd, async (error, stdout, stderr) => {
-    if (error) {
-      console.log(error.message);
-      await prettierFormatterGitLab(stdout + stderr);
-      process.exit(1);
-    }
-  });
+  exec(
+    cmd,
+    {
+      env: {
+        ...process.env,
+        NO_COLOR: 'true',
+      },
+    },
+    async (error, stdout, stderr) => {
+      if (error) {
+        console.log(error.message);
+        await prettierFormatterGitLab(stdout + stderr);
+        process.exit(1);
+      }
+    },
+  );
 }

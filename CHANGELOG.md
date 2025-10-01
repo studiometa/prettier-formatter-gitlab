@@ -6,7 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## v2.1.1 - 2021.01.25
+### v2.1.2 - 2025.10.01
+
+### Fixed
+
+- Fix bug with ANSI stripping ([dafebb3](https://github.com/studiometa/prettier-formatter-gitlab/commit/dafebb3))
+- Fix parsing of Prettier results ([6ba7c77](https://github.com/studiometa/prettier-formatter-gitlab/commit/6ba7c77))
+
+### Changed
+
+- Update dependencies ([9ecfa6e](https://github.com/studiometa/prettier-formatter-gitlab/commit/9ecfa6e))
+- Update dependency yaml to v2.7.1 ([#76](https://github.com/studiometa/prettier-formatter-gitlab/pull/76), [dacaf9f](https://github.com/studiometa/prettier-formatter-gitlab/commit/dacaf9f))
+
+## v2.1.1 - 2025.01.25
 
 ### Fixed
 

@@ -39,13 +39,13 @@ exports[`The gitlab formatter should handle files with syntax errors 1`] = `
     "check_name": "prettier",
     "description": 
 "SyntaxError: Unexpected token, expected "(" (3:13)
-\x1B[0m \x1B[90m 1 |\x1B[39m \x1B[90m/* eslint-disable */\x1B[39m
- \x1B[90m 2 |\x1B[39m
-\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 3 |\x1B[39m \x1B[36mfunction\x1B[39m foo\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m\x1B[33m#\x1B[39m( arg  ) {
- \x1B[90m   |\x1B[39m             \x1B[31m\x1B[1m^\x1B[22m\x1B[39m
- \x1B[90m 4 |\x1B[39m   \x1B[36mreturn\x1B[39m arg\x1B[33m;\x1B[39m
- \x1B[90m 5 |\x1B[39m }
- \x1B[90m 6 |\x1B[39m\x1B[0m"
+  1 | /* eslint-disable */
+  2 |
+> 3 | function foo#####( arg  ) {
+    |             ^
+  4 |   return arg;
+  5 | }
+  6 |"
 ,
     "fingerprint": "462882d90971b8c9dcaaa2b4d74d1da6",
     "location": {

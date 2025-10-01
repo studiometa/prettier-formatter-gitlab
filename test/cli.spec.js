@@ -14,7 +14,7 @@ describe('prettier-formatter-gitlab cli', () => {
   it('should create a code quality report file with prettier -l', () => {
     try {
       execSync(
-        `PRETTIER_CODE_QUALITY_REPORT="${CODE_QUALITY_FILENAME}" ./bin/cli.js "prettier -l test/__stubs__/"`,
+        `NO_COLOR=true PRETTIER_CODE_QUALITY_REPORT="${CODE_QUALITY_FILENAME}" ./bin/cli.js "prettier -l test/__stubs__/"`,
       );
     } catch (err) {
       // Silence is golden.
@@ -28,7 +28,7 @@ describe('prettier-formatter-gitlab cli', () => {
   it('should create a code quality report file with prettier -c', () => {
     try {
       execSync(
-        `PRETTIER_CODE_QUALITY_REPORT="${CODE_QUALITY_FILENAME}" ./bin/cli.js "prettier -c test/__stubs__/"`,
+        `NO_COLOR=true PRETTIER_CODE_QUALITY_REPORT="${CODE_QUALITY_FILENAME}" ./bin/cli.js "prettier -c test/__stubs__/"`,
       );
     } catch (err) {
       // Silence is golden.

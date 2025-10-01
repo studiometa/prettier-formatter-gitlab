@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import stripAnsi from 'strip-ansi';
 import { showInvisibles, generateDifferences } from 'prettier-linter-helpers';
 import { getPrettierFileInfos } from '../utils/get-prettier-file-infos.js';
 
@@ -33,7 +34,7 @@ function formatFile({ filename, input, output, error }) {
       {
         type: 'issue',
         check_name: 'prettier',
-        description: String(error),
+        description: stripAnsi(String(error)),
         severity: 'major',
         fingerprint: createFingerprint(filename, error.message),
         location: {

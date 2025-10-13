@@ -17,7 +17,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "NO_COLOR=true bun test test/",
+    "test": "bun test test/",
     "lint": "eslint . --cache",
     "fix": "eslint . --cache --fix"
   },

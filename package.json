@@ -17,7 +17,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "CI=true bun test test/",
+    "test": "NO_COLOR=true bun test test/",
     "lint": "eslint . --cache",
     "fix": "eslint . --cache --fix"
   },
@@ -46,7 +46,6 @@
     "prettier": "3.6.2"
   },
   "dependencies": {
-    "chalk": "^5.6.2",
     "jest-diff": "^30.2.0",
     "prettier-linter-helpers": "^1.0.0",
     "yaml": "2.8.1"

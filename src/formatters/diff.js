@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import { styleText } from 'node:util';
 import { diffStringsUnified } from 'jest-diff';
 import { getPrettierFileInfos } from '../utils/get-prettier-file-infos.js';
 
@@ -21,8 +21,8 @@ ${filename}
     diff += String(error);
   } else {
     diff += diffStringsUnified(input || '', output || '', {
-      aColor: chalk.red,
-      bColor: chalk.green,
+      aColor: (value) => styleText('red', value),
+      bColor: (value) => styleText('green', value),
       omitAnnotationLines: true,
       contextLines: 2,
       expand: false,
